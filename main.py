@@ -24,6 +24,10 @@ name = re.sub("<.*?>", "", str(find_name))
 name = name.strip()
 print(name)
 
+invalid_chars = '<>:"/\\|?*'
+for char in invalid_chars:
+    name = name.replace(char, '')
+
 #Download map
 base_url = 'https://trackmania.exchange/mapgbx/'
 map_url = base_url + str(get_id["Id"])
